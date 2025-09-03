@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { io, Socket } from 'socket.io-client';
-import Navigation from '@/components/navigation/Navigation';
+import ServiceNavigation from '@/components/navigation/ServiceNavigation';
 import OnboardingScreen from '@/components/OnboardingScreen';
 import LoadingScreen from '@/components/LoadingScreen';
 import MangaViewer from './MangaViewer';
@@ -265,8 +265,8 @@ const MangaService: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation showHamburger />
+    <div className="min-h-screen bg-background font-kalam">
+      <ServiceNavigation />
       <div className="pt-16">
         {renderCurrentComponent()}
       </div>

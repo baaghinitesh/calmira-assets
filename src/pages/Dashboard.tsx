@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import MoodCarousel from '@/components/dashboard/MoodCarousel';
 import ServiceCard from '@/components/dashboard/ServiceCard';
-import ImprovedNavigation from '@/components/navigation/ImprovedNavigation';
+import { Link } from 'react-router-dom';
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -38,12 +38,29 @@ const Dashboard: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <ImprovedNavigation transparent />
+    <div className="min-h-screen bg-background font-kalam">
+      {/* Top Navigation Bar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md border-b border-primary/20">
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="kalam-bold text-xl font-bold text-foreground">
+            Mental Wellness
+          </div>
+          <div className="flex items-center space-x-6">
+            <Link to="/" className="kalam-regular text-foreground hover:text-primary transition-colors">
+              Home
+            </Link>
+            <Link to="/profile" className="kalam-regular text-foreground hover:text-primary transition-colors">
+              Profile
+            </Link>
+            <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-medium rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">MW</span>
+            </div>
+          </div>
+        </div>
+      </nav>
 
       {/* Main Content */}
-      <main className="lg:ml-64 min-h-screen pt-20 lg:pt-0 px-4 pb-8">
+      <main className="min-h-screen pt-20 px-4 pb-8">
         <div className="max-w-7xl mx-auto py-8 lg:py-16">
           {/* Welcome Section */}
           <motion.div
@@ -100,7 +117,7 @@ const Dashboard: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="lg:ml-64 bg-transparent border-t border-border/30 backdrop-blur-sm">
+      <footer className="bg-transparent border-t border-border/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="text-center text-muted-foreground">
             <p className="kalam-light text-lg">&copy; 2024 Mental Wellness App. Supporting your journey to better mental health.</p>

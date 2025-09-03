@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import ImprovedNavigation from '@/components/navigation/ImprovedNavigation';
+import ServiceNavigation from '@/components/navigation/ServiceNavigation';
 import ChatInterface from '@/services/chat/ChatInterface';
 
 interface VoiceOption {
@@ -89,8 +89,8 @@ const VoiceService: React.FC = () => {
     const option = voiceOptions.find(opt => opt.id === selectedOption);
     
     return (
-      <div className="min-h-screen bg-background">
-        <ImprovedNavigation />
+      <div className="min-h-screen bg-background font-kalam">
+        <ServiceNavigation />
         
         <div className="pt-16 h-screen">
           <motion.div
@@ -151,8 +151,8 @@ const VoiceService: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <ImprovedNavigation />
+    <div className="min-h-screen bg-background font-kalam">
+      <ServiceNavigation />
       
       <main className="lg:ml-64 min-h-screen pt-20 lg:pt-0 px-4 pb-8">
         <div className="max-w-6xl mx-auto py-8 lg:py-16">
