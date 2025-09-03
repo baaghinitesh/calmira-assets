@@ -1,0 +1,363 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Calmira Dark Theme - Inspired by the cosmic light effects */
+    --background: 217 32% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 217 32% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 217 32% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 267 89% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 32% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217 32% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 320 100% 75%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 32% 18%;
+    --input: 217 32% 18%;
+    --ring: 267 89% 70%;
+
+    --radius: 0.75rem;
+
+    /* Calmira Brand Colors */
+    --purple-glow: 267 89% 70%;
+    --pink-glow: 320 100% 75%;
+    --blue-glow: 240 100% 80%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(267 89% 70%), hsl(320 100% 75%), hsl(240 100% 80%));
+    --gradient-text: linear-gradient(90deg, hsl(267 89% 85%), hsl(320 100% 85%), hsl(240 100% 85%));
+    --gradient-button: linear-gradient(135deg, hsl(267 89% 60%), hsl(320 100% 65%));
+    --gradient-background: radial-gradient(ellipse at center, hsl(267 89% 15% / 0.3), transparent);
+
+    /* Shadows and Effects */
+    --shadow-glow: 0 0 40px hsl(267 89% 70% / 0.4);
+    --shadow-pink: 0 0 30px hsl(320 100% 75% / 0.3);
+    --shadow-blue: 0 0 30px hsl(240 100% 80% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 217 32% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 267 89% 70%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 32% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 217 32% 18%;
+    --sidebar-ring: 267 89% 70%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .michroma-regular {
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-effect {
+    filter: drop-shadow(var(--shadow-glow));
+  }
+
+  .hero-button {
+    background: var(--gradient-button);
+    transition: var(--transition-glow);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .hero-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow), var(--shadow-pink);
+  }
+
+  /* Three.js Hero Component Styles */
+  .hero-container {
+    position: relative;
+    width: 100vw;
+    height: 300vh; /* 3x viewport height for scrolling */
+    overflow: hidden;
+  }
+
+  .hero-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .side-menu {
+    position: fixed;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .menu-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.875rem;
+    letter-spacing: 0.25rem;
+    color: white;
+    opacity: 0.7;
+  }
+
+  .hero-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .hero-content {
+      padding: 0 2rem;
+    }
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 700;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .subtitle-line {
+    margin-bottom: 0.5rem;
+  }
+
+  .scroll-progress {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    z-index: 100;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .scroll-progress {
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+  }
+
+  .scroll-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.25rem;
+    color: white;
+    opacity: 0.9;
+    white-space: nowrap;
+  }
+
+  .progress-track {
+    width: 120px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (min-width: 640px) {
+    .progress-track {
+      width: 200px;
+      height: 10px;
+      border-radius: 5px;
+    }
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    min-height: 2px;
+  }
+
+  .section-counter {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+    opacity: 0.9;
+    white-space: nowrap;
+  }
+
+  .scroll-sections {
+    position: relative;
+    z-index: 5;
+  }
+
+  .content-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .title-char {
+    display: inline-block;
+  }
+
+  /* Custom Launch Button Styles */
+  .custom-launch-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 0.9em;
+    color: white;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+  }
+
+  @media (min-width: 640px) {
+    .custom-launch-button {
+      padding: 0.8em 1.3em 0.8em 0.9em;
+    }
+  }
+
+  .custom-launch-button svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .custom-launch-button span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .custom-launch-button:hover svg {
+    transform: translateX(5px) rotate(90deg);
+  }
+
+  .custom-launch-button:hover span {
+    transform: translateX(7px);
+  }
+
+  .custom-launch-button:hover {
+    background: linear-gradient(to right, #1a1a2e, #16213e, #0f3460);
+    box-shadow: 0 4px 15px rgba(48, 43, 99, 0.3);
+  }
+}
