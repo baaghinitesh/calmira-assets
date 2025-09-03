@@ -71,7 +71,7 @@ const MoodCarousel: React.FC = () => {
 
   return (
     <div className="w-full">
-      <h3 className="text-lg font-semibold text-foreground mb-4 text-center">
+      <h3 className="text-2xl md:text-3xl kalam-bold text-foreground mb-8 text-center">
         Select your current mood
       </h3>
       
@@ -94,13 +94,13 @@ const MoodCarousel: React.FC = () => {
               console.log('Selected mood:', mood.label);
             }}
           >
-            <span className="text-2xl">{mood.emoji}</span>
-            <span className="text-sm font-medium text-foreground">{mood.label}</span>
+            <span className="text-3xl">{mood.emoji}</span>
+            <span className="text-base kalam-regular font-medium text-foreground">{mood.label}</span>
           </motion.button>
         ))}
       </div>
       
-      <p className="text-center text-muted-foreground text-sm mt-4">
+      <p className="text-center text-muted-foreground text-lg kalam-light mt-6">
         Hover to pause • Click to select your mood
       </p>
     </div>

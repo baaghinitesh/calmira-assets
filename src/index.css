@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Michroma:wght@400&display=swap');
 
 @tailwind base;
@@ -10,34 +11,34 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Custom Dark Theme with specified palette */
-    --background: 240 60% 2%; /* #04040D */
+    /* Refined Dark Theme matching Landing Page */
+    --background: 240 15% 8%; /* Softer dark background */
     --foreground: 0 0% 98%;
 
-    --card: 238 28% 22%; /* #3C3E73 */
+    --card: 238 28% 15%; /* Darker card background */
     --card-foreground: 0 0% 98%;
 
-    --popover: 238 28% 22%;
+    --popover: 238 28% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 237 30% 27%; /* #4A4E8C */
+    --primary: 237 30% 40%; /* Brighter primary for better contrast */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 238 28% 20%;
+    --secondary: 238 28% 18%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 238 28% 18%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 238 28% 16%;
+    --muted-foreground: 215 20% 70%;
 
-    --accent: 237 30% 27%;
+    --accent: 237 30% 35%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 238 28% 25%;
-    --input: 238 28% 25%;
-    --ring: 237 30% 27%;
+    --border: 238 28% 20%;
+    --input: 238 28% 18%;
+    --ring: 237 30% 40%;
 
     --radius: 1rem; /* 2xl rounded corners */
 
@@ -116,7 +117,20 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-michroma;
+    @apply bg-background text-foreground font-kalam;
+  }
+
+  /* Font weight utilities */
+  .font-light {
+    font-weight: 300;
+  }
+  
+  .font-normal {
+    font-weight: 400;
+  }
+  
+  .font-bold {
+    font-weight: 700;
   }
 }
 
@@ -124,6 +138,24 @@ All colors MUST be HSL.
   .michroma-regular {
     font-family: "Michroma", sans-serif;
     font-weight: 400;
+    font-style: normal;
+  }
+
+  .kalam-light {
+    font-family: "Kalam", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .kalam-regular {
+    font-family: "Kalam", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .kalam-bold {
+    font-family: "Kalam", sans-serif;
+    font-weight: 700;
     font-style: normal;
   }
 
