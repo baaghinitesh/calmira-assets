@@ -397,9 +397,7 @@ const App = () => (
           <Route path="/services/manga" element={<MangaService />} />
           <Route path="/services/voice" element={<VoiceService />} />
           <Route path="/services/chat" element={<ChatService />} />
-          
-          {/* Legacy Routes */}
-          <Route path="/voice" element={<VoiceChat />} />
+          <Route path="/voice" element={<VoiceService />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

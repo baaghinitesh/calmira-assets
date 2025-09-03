@@ -34,9 +34,9 @@ const ServiceNavigation: React.FC = () => {
           variant="ghost"
           size="sm"
           onClick={toggleMobileMenu}
-          className="p-3 bg-background/90 backdrop-blur-md border border-border/50 hover:bg-primary/10 rounded-xl shadow-lg"
+          className="p-3 bg-primary-dark/30 backdrop-blur-xl border border-white/20 hover:bg-white/10 rounded-xl shadow-2xl"
         >
-          <Menu className="h-6 w-6 text-foreground" />
+          <Menu className="h-6 w-6 text-white" />
         </Button>
       </div>
 
@@ -45,17 +45,17 @@ const ServiceNavigation: React.FC = () => {
         initial={{ x: -300 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.3 }}
-        className="hidden lg:flex fixed top-0 left-0 h-full w-64 bg-background/95 backdrop-blur-lg border-r border-border/50 flex-col z-40"
+        className="hidden lg:flex fixed top-0 left-0 h-full w-64 bg-gradient-to-b from-primary-dark/40 via-background-deep/60 to-primary-dark/40 backdrop-blur-xl border-r border-white/10 flex-col z-40 shadow-2xl"
       >
         {/* Sidebar Header */}
-        <div className="p-6 border-b border-border/30">
+        <div className="p-6 border-b border-white/10">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-medium rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-medium rounded-xl flex items-center justify-center shadow-lg">
               <span className="text-white font-bold kalam-bold">MW</span>
             </div>
             <div>
-              <h2 className="kalam-bold text-foreground">Mental Wellness</h2>
-              <p className="text-muted-foreground text-sm kalam-light">Your companion</p>
+              <h2 className="kalam-bold text-white">Mental Wellness</h2>
+              <p className="text-white/70 text-sm kalam-light">Your companion</p>
             </div>
           </div>
         </div>
@@ -68,8 +68,8 @@ const ServiceNavigation: React.FC = () => {
               onClick={() => handleNavigation(item.path)}
               className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 kalam-regular ${
                 location.pathname === item.path
-                  ? 'bg-primary/20 text-primary border border-primary/30'
-                  : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+                  ? 'bg-white/20 text-white border border-white/30 shadow-lg'
+                  : 'text-white/70 hover:text-white hover:bg-white/10'
               }`}
             >
               <item.icon className="h-5 w-5" />
@@ -79,8 +79,8 @@ const ServiceNavigation: React.FC = () => {
         </nav>
 
         {/* Sidebar Footer */}
-        <div className="p-4 border-t border-border/30">
-          <p className="text-xs text-muted-foreground kalam-light text-center">
+        <div className="p-4 border-t border-white/10">
+          <p className="text-xs text-white/50 kalam-light text-center">
             &copy; 2024 Mental Wellness
           </p>
         </div>
@@ -105,18 +105,18 @@ const ServiceNavigation: React.FC = () => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 20, stiffness: 300 }}
-              className="lg:hidden fixed top-0 left-0 h-full w-80 max-w-[80vw] bg-background/95 backdrop-blur-lg border-r border-border/50 z-50 overflow-y-auto"
+              className="lg:hidden fixed top-0 left-0 h-full w-80 max-w-[80vw] bg-gradient-to-b from-primary-dark/40 via-background-deep/60 to-primary-dark/40 backdrop-blur-xl border-r border-white/10 z-50 overflow-y-auto shadow-2xl"
             >
               <div className="p-6">
                 {/* Panel Header */}
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-medium rounded-xl flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-medium rounded-xl flex items-center justify-center shadow-lg">
                       <span className="text-white font-bold kalam-bold">MW</span>
                     </div>
                     <div>
-                      <h2 className="kalam-bold text-foreground">Mental Wellness</h2>
-                      <p className="text-muted-foreground text-sm kalam-light">Your companion</p>
+                      <h2 className="kalam-bold text-white">Mental Wellness</h2>
+                      <p className="text-white/70 text-sm kalam-light">Your companion</p>
                     </div>
                   </div>
                   <Button
@@ -125,7 +125,7 @@ const ServiceNavigation: React.FC = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="p-2 hover:bg-primary/10 rounded-xl"
                   >
-                    <X className="h-5 w-5 text-foreground" />
+                    <X className="h-5 w-5 text-white" />
                   </Button>
                 </div>
 
@@ -139,8 +139,8 @@ const ServiceNavigation: React.FC = () => {
                       onClick={() => handleNavigation(item.path)}
                       className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 kalam-regular ${
                         location.pathname === item.path
-                          ? 'bg-primary/20 text-primary border border-primary/30'
-                          : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+                          ? 'bg-white/20 text-white border border-white/30 shadow-lg'
+                          : 'text-white/70 hover:text-white hover:bg-white/10'
                       }`}
                     >
                       <item.icon className="h-5 w-5" />

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import MoodCarousel from '@/components/dashboard/MoodCarousel';
+import AutoScrollingMood from '@/components/dashboard/AutoScrollingMood';
 import ServiceCard from '@/components/dashboard/ServiceCard';
 import { Link } from 'react-router-dom';
 
@@ -38,30 +38,50 @@ const Dashboard: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background font-kalam">
-      {/* Top Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md border-b border-primary/20">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="kalam-bold text-xl font-bold text-foreground">
-            Mental Wellness
-          </div>
-          <div className="flex items-center space-x-6">
-            <Link to="/" className="kalam-regular text-foreground hover:text-primary transition-colors">
-              Home
-            </Link>
-            <Link to="/profile" className="kalam-regular text-foreground hover:text-primary transition-colors">
-              Profile
-            </Link>
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-medium rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">MW</span>
-            </div>
+    <div className="h-screen w-screen bg-gradient-to-br from-background-deep via-primary-dark to-background overflow-hidden font-kalam">
+      {/* Glassmorphism Navigation Bar */}
+      <nav className="fixed top-0 left-0 right-0 z-50">
+        <div className="mx-6 mt-4 rounded-2xl bg-primary-dark/30 backdrop-blur-xl border border-primary/20 shadow-2xl">
+          <div className="px-6 py-4 flex justify-between items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center space-x-3"
+            >
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-medium rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold kalam-bold">MW</span>
+              </div>
+              <div className="kalam-bold text-xl font-bold text-white">
+                Mental Wellness
+              </div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center space-x-6"
+            >
+              <Link 
+                to="/" 
+                className="kalam-regular text-white/90 hover:text-white hover:shadow-glow transition-all duration-300 relative group"
+              >
+                Home
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-medium group-hover:w-full transition-all duration-300"></span>
+              </Link>
+              <Link 
+                to="/profile" 
+                className="kalam-regular text-white/90 hover:text-white hover:shadow-glow transition-all duration-300 relative group"
+              >
+                Profile
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-medium group-hover:w-full transition-all duration-300"></span>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </nav>
 
-      {/* Main Content */}
-      <main className="min-h-screen pt-20 px-4 pb-8">
-        <div className="max-w-7xl mx-auto py-8 lg:py-16">
+      {/* Main Content - Full Viewport */}
+      <main className="h-full w-full pt-24 pb-8 px-6 overflow-y-auto">
+        <div className="max-w-7xl mx-auto h-full flex flex-col">
           {/* Welcome Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -69,23 +89,13 @@ const Dashboard: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl kalam-bold text-foreground mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl kalam-bold text-white mb-4 drop-shadow-2xl">
               How are you?
             </h1>
-            <p className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto kalam-light leading-relaxed">
-              Choose your mood and explore our services designed to support your mental wellness journey
-            </p>
+            <AutoScrollingMood />
           </motion.div>
 
-          {/* Mood Carousel */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-16"
-          >
-            <MoodCarousel />
-          </motion.div>
+
 
           {/* Services Section */}
           <motion.div
@@ -93,7 +103,7 @@ const Dashboard: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl kalam-bold text-foreground mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl kalam-bold text-white mb-12 text-center drop-shadow-xl">
               Choose Your Service
             </h2>
             
@@ -113,17 +123,15 @@ const Dashboard: React.FC = () => {
               ))}
             </div>
           </motion.div>
+
+          {/* Footer */}
+          <footer className="mt-auto pt-8">
+            <div className="text-center">
+              <p className="kalam-light text-lg text-white/70">&copy; 2024 Mental Wellness App. Supporting your journey to better mental health.</p>
+            </div>
+          </footer>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-transparent border-t border-border/30 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="text-center text-muted-foreground">
-            <p className="kalam-light text-lg">&copy; 2024 Mental Wellness App. Supporting your journey to better mental health.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
