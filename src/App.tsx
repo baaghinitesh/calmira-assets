@@ -8,7 +8,6 @@ import { io, Socket } from "socket.io-client";
 import OnboardingScreen from "./components/OnboardingScreen";
 import LoadingScreen from "./components/LoadingScreen";
 import MangaViewer from "./components/manga-viewer/MangaViewer";
-import BeforeOnboarding from "./pages/beforeOnboarding/BeforeOnboarding";
 import VoiceChat from "./pages/voiceChat/VoiceChat";
 
 import Index from "./pages/Index";
@@ -392,7 +391,6 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/before-onboarding" element={<BeforeOnboarding />} />
           <Route path="/mental-wellness" element={<MentalWellnessApp />} />
           
           {/* Service Routes */}

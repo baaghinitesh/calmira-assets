@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Socket } from "socket.io-client";
-import { useAudioStateMachine, type PanelAudio } from "../AudioStateMachine";
+import { useAudioStateMachine, type PanelAudio } from "./AudioStateMachine";
 import BackgroundVideo from "./BackgroundVideo";
 import LoadingScreen from "./LoadingScreen";
 

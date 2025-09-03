@@ -16,7 +16,7 @@ const Dashboard: React.FC = () => {
       title: 'Manga Creation',
       description: 'Create personalized manga stories based on your mood and preferences',
       icon: '📚',
-      path: '/services/manga',
+      path: '/mental-wellness', // Direct to Mental Wellness app
       gradient: 'from-primary-dark/20 to-primary-medium/20'
     },
     {
@@ -24,7 +24,7 @@ const Dashboard: React.FC = () => {
       title: 'Voice Chat',
       description: 'Have voice conversations with AI friends, therapists, or teachers',
       icon: '🎙️',
-      path: '/services/voice',
+      path: '/voice', // Direct to Voice Chat interface
       gradient: 'from-primary-medium/20 to-primary-dark/20'
     },
     {
