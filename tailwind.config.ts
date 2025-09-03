@@ -67,9 +67,10 @@ export default {
 				'blue-glow': 'hsl(var(--blue-glow))'
 			},
 			fontFamily: {
-				'kalam': ['Kalam', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
 				'michroma': ['Michroma', 'sans-serif'],
-				sans: ['Kalam', 'sans-serif'],
+				sans: ['Inter', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
