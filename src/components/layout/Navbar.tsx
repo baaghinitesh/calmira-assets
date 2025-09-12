@@ -27,16 +27,16 @@ const Navbar: React.FC = () => {
               {/* LEFT: Logo */}
               <Link
                 to="/"
-                className="flex items-center gap-2 font-bold text-xl text-white"
+                className="flex items-center gap-2 font-michroma text-xl text-primary font-bold"
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="w-10 h-10 flex items-center justify-center rounded-lg
-                             bg-gradient-to-br from-primary to-primary-dark text-white"
+                             cosmic-gradient text-white shadow-lg"
                 >
                   C
                 </motion.div>
-                <span className="hidden sm:inline">Mental Wellness</span>
+                <span className="hidden sm:inline">Calmira AI</span>
               </Link>
 
               {/* CENTER: Navigation links (desktop) */}
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
                   <a
                     key={link.name}
                     href={link.path}
-                    className="relative small-text font-medium transition-colors hover:text-white"
+                    className="relative text-secondary font-medium transition-colors hover:text-primary"
                   >
                     {link.name}
                     {/* Animated underline */}
@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}
                   className="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-md
-                             small-text hover:text-white transition"
+                             text-secondary hover:text-primary transition"
                 >
                   <BarChart3 size={18} />
                   Analytics
@@ -71,8 +71,8 @@ const Navbar: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-5 py-2 rounded-lg bg-primary text-white font-medium shadow-md
-                             hover:bg-primary-dark transition"
+                  className="px-5 py-2 rounded-lg cosmic-gradient text-white font-medium shadow-md
+                             hover:shadow-cosmic transition transform hover:scale-105"
                 >
                   Sign Up
                 </motion.button>
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
                 {/* Hamburger (mobile only) */}
                 <button
                   onClick={() => setMobileOpen((s) => !s)}
-                  className="lg:hidden p-2 rounded-md text-white hover:text-primary transition"
+                  className="lg:hidden p-2 rounded-md text-primary hover:text-white transition"
                 >
                   {mobileOpen ? <X size={22} /> : <Menu size={22} />}
                 </button>
@@ -107,7 +107,7 @@ const Navbar: React.FC = () => {
                     key={link.name}
                     href={link.path}
                     onClick={() => setMobileOpen(false)}
-                    className="text-white font-medium px-4 py-2 rounded-md hover:bg-primary/20 transition"
+                    className="text-primary font-medium px-4 py-2 rounded-md hover:bg-accent/20 transition"
                   >
                     {link.name}
                   </a>
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
                   className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md
-                             small-text border border-border hover:bg-primary/20 transition"
+                             text-secondary border border-border hover:bg-accent/20 transition"
                 >
                   <BarChart3 size={18} />
                   Analytics
@@ -128,7 +128,7 @@ const Navbar: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full px-4 py-2 rounded-md bg-primary text-white font-medium shadow hover:bg-primary-dark transition"
+                  className="w-full px-4 py-2 rounded-md cosmic-gradient text-white font-medium shadow hover:shadow-cosmic transition"
                 >
                   Sign Up
                 </motion.button>

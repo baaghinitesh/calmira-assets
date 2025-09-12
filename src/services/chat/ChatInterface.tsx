@@ -117,19 +117,19 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-full max-h-screen bg-gradient-to-b from-background-soft to-background">
+    <div className="flex flex-col h-full max-h-screen" style={{background: 'var(--gradient-background)'}}>
       {/* Chat Header */}
       <div className="flex items-center justify-between p-4 navbar-bg backdrop-blur-lg border-b border-border shadow-sm">
         <div className="flex items-center space-x-3">
           <Avatar className="h-10 w-10">
             <AvatarImage src={contactAvatar} alt={contactName} />
-            <AvatarFallback className="bg-gradient-to-br from-primary to-primary-dark text-white">
+            <AvatarFallback className="cosmic-gradient text-white">
               {contactName.charAt(0)}
             </AvatarFallback>
           </Avatar>
           <div>
-            <h3 className="poppins-semibold text-white">{contactName}</h3>
-            <p className="text-sm inter-regular small-text">{contactStatus}</p>
+            <h3 className="font-semibold text-primary">{contactName}</h3>
+            <p className="text-sm font-normal text-secondary">{contactStatus}</p>
           </div>
         </div>
         
@@ -138,23 +138,23 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
             variant="ghost"
             size="sm"
             onClick={onVoiceCall}
-            className="p-2 hover:bg-primary/10 rounded-xl"
+            className="p-2 hover:bg-accent/10 rounded-xl"
           >
-            <Phone className="h-5 w-5 text-foreground" />
+            <Phone className="h-5 w-5 text-secondary" />
           </Button>
           <Button
             variant="ghost"
             size="sm"
             onClick={onVideoCall}
-            className="p-2 hover:bg-primary/10 rounded-xl"
+            className="p-2 hover:bg-accent/10 rounded-xl"
           >
-            <Video className="h-5 w-5 text-foreground" />
+            <Video className="h-5 w-5 text-secondary" />
           </Button>
         </div>
       </div>
 
       {/* Messages Area */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-background-soft/50 to-background/30">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4" style={{background: 'radial-gradient(ellipse at center, rgba(45, 27, 105, 0.3) 0%, rgba(26, 15, 61, 0.2) 50%, rgba(15, 12, 41, 0.1) 100%)'}}>
         <AnimatePresence>
           {messages.map((message) => (
             <motion.div
@@ -169,13 +169,13 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
                 <div
                   className={`rounded-2xl px-4 py-3 shadow-sm ${
                     message.sender === 'user'
-                      ? 'bg-primary text-white ml-2 rounded-br-sm'
-                      : 'bg-card border border-border small-text mr-2 rounded-bl-sm'
+                      ? 'cosmic-gradient text-white ml-2 rounded-br-sm'
+                      : 'bg-card border border-border text-secondary mr-2 rounded-bl-sm'
                   }`}
                 >
-                  <p className="text-sm inter-regular leading-relaxed">{message.content}</p>
+                  <p className="text-sm font-normal leading-relaxed">{message.content}</p>
                 </div>
-                <div className={`text-xs small-text/70 mt-1 ${
+                <div className={`text-xs text-muted mt-1 ${
                   message.sender === 'user' ? 'text-right mr-2' : 'text-left ml-2'
                 }`}>
                   {formatTime(message.timestamp)}
@@ -185,7 +185,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
               {message.sender === 'ai' && (
                 <Avatar className="h-8 w-8 order-1">
                   <AvatarImage src={contactAvatar} alt={contactName} />
-                  <AvatarFallback className="bg-gradient-to-br from-primary/20 to-primary/30 text-primary text-xs">
+                  <AvatarFallback className="bg-accent/20 text-accent text-xs">
                     {contactName.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
@@ -206,7 +206,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
               <div className="flex items-center space-x-2">
                 <Avatar className="h-8 w-8">
                   <AvatarImage src={contactAvatar} alt={contactName} />
-                  <AvatarFallback className="bg-gradient-to-br from-primary/20 to-primary/30 text-primary text-xs">
+                  <AvatarFallback className="bg-accent/20 text-accent text-xs">
                     {contactName.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
@@ -231,9 +231,9 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
           <Button
             variant="ghost"
             size="sm"
-            className="p-2 hover:bg-primary/20 rounded-xl flex-shrink-0"
+            className="p-2 hover:bg-accent/20 rounded-xl flex-shrink-0"
           >
-            <Paperclip className="h-5 w-5 small-text" />
+            <Paperclip className="h-5 w-5 text-secondary" />
           </Button>
           
           <div className="flex-1 relative">
@@ -243,14 +243,14 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
               onChange={(e) => setNewMessage(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Type a message..."
-              className="rounded-2xl border-border bg-input pr-12 inter-regular small-text placeholder:small-text/70 focus:border-primary focus:ring-primary"
+              className="rounded-2xl border-border bg-input pr-12 font-normal text-primary placeholder:text-muted focus:border-accent focus:ring-accent"
             />
             <Button
               variant="ghost"
               size="sm"
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-1 hover:bg-primary/20 rounded-xl"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 p-1 hover:bg-accent/20 rounded-xl"
             >
-              <Smile className="h-4 w-4 small-text" />
+              <Smile className="h-4 w-4 text-secondary" />
             </Button>
           </div>
 
@@ -258,8 +258,8 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
             onClick={newMessage.trim() ? handleSendMessage : onVoiceMessage}
             className={`p-3 rounded-2xl flex-shrink-0 transition-all duration-200 ${
               newMessage.trim() 
-                ? 'bg-primary hover:bg-primary-dark text-white shadow-md hover:shadow-lg' 
-                : 'bg-primary/20 hover:bg-primary/30 text-primary'
+                ? 'cosmic-gradient text-white shadow-md hover:shadow-cosmic transform hover:scale-105' 
+                : 'bg-accent/20 hover:bg-accent/30 text-accent'
             }`}
           >
             {newMessage.trim() ? (

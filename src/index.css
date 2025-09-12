@@ -12,75 +12,81 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Custom Dark Theme */
-    --background: 246 67% 15%; /* #07043d base */
-    --foreground: 274 91% 94%; /* #ede4fa for small text */
+    /* Cosmic Dark Theme - Matching Landing Page */
+    --background: 245 55% 11%; /* #0f0c29 matching landing button */
+    --foreground: 0 0% 98%; /* Pure white for text */
 
-    --card: 289 35% 25%; /* Dark card with purple tint */
-    --card-foreground: 274 91% 94%; /* #ede4fa */
+    --card: 252 36% 28%; /* #302b63 cosmic card background */
+    --card-foreground: 0 0% 95%; /* Light text on cards */
 
-    --popover: 289 35% 25%;
-    --popover-foreground: 274 91% 94%;
+    --popover: 252 36% 28%; /* #302b63 */
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 217 64% 60%; /* #507cdb button color */
+    --primary: 252 36% 28%; /* #302b63 cosmic primary */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 334 28% 41%; /* #80505c navbar color */
-    --secondary-foreground: 274 91% 94%;
+    --secondary: 245 29% 20%; /* #24243e dark cosmic */
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 289 35% 20%; /* Darker muted */
-    --muted-foreground: 274 91% 94%; /* #ede4fa */
+    --muted: 245 55% 8%; /* Very dark cosmic */
+    --muted-foreground: 0 0% 75%; /* Muted text */
 
-    --accent: 0 73% 59%; /* #ee4444 for headings */
+    --accent: 0 84% 65%; /* #ff3333 red accent matching landing */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 73% 59%; /* #ee4444 */
+    --destructive: 0 84% 65%; /* Red for destructive actions */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 289 35% 30%; /* Darker border */
-    --input: 289 35% 22%; /* Dark input */
-    --ring: 217 64% 60%;
+    --border: 252 36% 35%; /* Lighter cosmic border */
+    --input: 252 36% 20%; /* Dark cosmic input */
+    --ring: 0 84% 65%; /* Red focus ring */
 
     --radius: 0.75rem;
 
-    /* Custom Dark Theme Colors */
-    --primary-light: 217 64% 70%; /* Lighter button */
-    --primary-medium: 217 64% 60%; /* #507cdb */
-    --primary-dark: 217 64% 50%; /* Darker button */
-    --background-soft: 289 35% 18%; /* Soft dark background */
+    /* Cosmic Theme Colors */
+    --cosmic-primary: 252 36% 28%; /* #302b63 */
+    --cosmic-secondary: 245 29% 20%; /* #24243e */
+    --cosmic-tertiary: 245 55% 11%; /* #0f0c29 */
+    --cosmic-fog: 259 69% 29%; /* #2d1b69 landing page fog */
+    --cosmic-red: 0 84% 65%; /* #ff3333 red accent */
     
-    /* Dark Theme Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(246 67% 15%), hsl(289 71% 22%), hsl(334 28% 41%));
-    --gradient-text: linear-gradient(90deg, hsl(0 73% 59%), hsl(274 91% 94%), hsl(217 64% 60%));
-    --gradient-button: linear-gradient(135deg, hsl(217 64% 60%), hsl(217 64% 70%));
-    --gradient-button-hover: linear-gradient(to right, hsl(245 55% 11%), hsl(252 36% 28%), hsl(245 29% 20%));
-    --gradient-background: linear-gradient(135deg, hsl(246 67% 15%), hsl(289 71% 22%), hsl(334 28% 41%), hsl(262 75% 20%), hsl(334 24% 44%));
-    --gradient-card: linear-gradient(135deg, hsl(289 35% 25%), hsl(334 28% 30%));
+    /* Cosmic Gradients - Matching Landing Page */
+    --gradient-cosmic: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    --gradient-cosmic-hover: linear-gradient(to right, #1a1a2e, #16213e, #0f3460);
+    --gradient-background: radial-gradient(ellipse at center, #2d1b69 0%, #1a0f3d 50%, #0f0c29 100%);
+    --gradient-card: linear-gradient(135deg, rgba(48, 43, 99, 0.8), rgba(36, 36, 62, 0.8));
+    --gradient-text: linear-gradient(90deg, #ff3333, #ffffff, #ff6666);
+    --gradient-border: linear-gradient(90deg, rgba(255, 51, 51, 0.3), rgba(48, 43, 99, 0.3));
 
-    /* Dark Theme Shadows */
-    --shadow-sm: 0 1px 3px hsl(246 67% 8% / 0.5);
-    --shadow-md: 0 4px 6px hsl(246 67% 8% / 0.5);
-    --shadow-lg: 0 10px 15px hsl(246 67% 8% / 0.5);
-    --shadow-xl: 0 20px 25px hsl(246 67% 8% / 0.5);
+    /* Cosmic Shadows */
+    --shadow-sm: 0 1px 3px rgba(15, 12, 41, 0.6);
+    --shadow-md: 0 4px 15px rgba(48, 43, 99, 0.3);
+    --shadow-lg: 0 10px 25px rgba(48, 43, 99, 0.4);
+    --shadow-xl: 0 20px 35px rgba(15, 12, 41, 0.8);
+    --shadow-cosmic: 0 8px 32px rgba(255, 51, 51, 0.15);
+    --shadow-glow: 0 0 20px rgba(255, 51, 51, 0.3);
 
     /* Smooth Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --transition-theme: all 0.4s ease;
 
-    /* Chat Colors */
-    --chat-sent: 217 64% 60%; /* #507cdb for sent messages */
-    --chat-received: 289 35% 25%; /* Dark for received messages */
+    /* Chat Colors - Cosmic Theme */
+    --chat-sent: 252 36% 28%; /* #302b63 cosmic for sent messages */
+    --chat-received: 245 29% 20%; /* #24243e for received messages */
     --chat-sent-foreground: 0 0% 100%;
-    --chat-received-foreground: 274 91% 94%; /* #ede4fa */
+    --chat-received-foreground: 0 0% 90%;
     
-    /* Navbar Color */
-    --navbar: 334 28% 41%; /* #80505c */
-    --navbar-foreground: 274 91% 94%;
+    /* Navbar Color - Semi-transparent cosmic */
+    --navbar: 0 0% 0%; /* Black base matching landing */
+    --navbar-foreground: 0 0% 100%;
+    --navbar-border: 0 84% 65%; /* Red border accent */
     
-    /* Heading Colors */
-    --heading: 0 73% 59%; /* #ee4444 */
-    --text-small: 274 91% 94%; /* #ede4fa */
+    /* Text Colors */
+    --heading: 0 84% 65%; /* #ff3333 red headings */
+    --text-primary: 0 0% 100%; /* Pure white primary text */
+    --text-secondary: 0 0% 80%; /* Light gray secondary text */
+    --text-muted: 0 0% 60%; /* Muted text */
   }
 
   /* Remove default dark theme as we're using custom dark theme as default */
@@ -94,8 +100,9 @@ All colors MUST be HSL.
   body {
     @apply font-inter;
     background: var(--gradient-background);
-    color: hsl(var(--foreground));
+    color: hsl(var(--text-primary));
     transition: var(--transition-theme);
+    min-height: 100vh;
   }
 
   /* Font weight utilities */
@@ -186,17 +193,32 @@ All colors MUST be HSL.
     background-clip: text;
   }
   
-  /* Heading styles */
+  /* Text utility classes for cosmic theme */
   .heading-text {
-    color: hsl(var(--heading)); /* #ee4444 */
+    color: hsl(var(--heading));
+    font-weight: 600;
   }
   
-  .small-text {
-    color: hsl(var(--text-small)); /* #ede4fa */
+  .text-primary {
+    color: hsl(var(--text-primary));
+  }
+
+  .text-secondary {
+    color: hsl(var(--text-secondary));
+  }
+
+  .text-muted {
+    color: hsl(var(--text-muted));
+  }
+
+  .cosmic-gradient {
+    background: var(--gradient-cosmic);
   }
   
   .navbar-bg {
-    background-color: hsl(var(--navbar)); /* #80505c */
+    background: hsl(var(--navbar) / 0.2);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid hsl(var(--navbar-border) / 0.2);
     color: hsl(var(--navbar-foreground));
   }
 
@@ -205,15 +227,16 @@ All colors MUST be HSL.
   }
 
   .hero-button {
-    background: var(--gradient-button);
+    background: var(--gradient-cosmic);
     transition: var(--transition-theme);
     box-shadow: var(--shadow-md);
+    border-radius: 16px;
   }
 
   .hero-button:hover {
     transform: translateY(-2px);
-    background: var(--gradient-button-hover);
-    box-shadow: var(--shadow-lg);
+    background: var(--gradient-cosmic-hover);
+    box-shadow: var(--shadow-cosmic);
   }
 
   /* New utility classes for consistent styling */
@@ -222,12 +245,13 @@ All colors MUST be HSL.
     @apply border border-border rounded-2xl p-6;
     transition: var(--transition-theme);
     box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
   }
 
   .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: hsl(var(--primary));
+    box-shadow: var(--shadow-cosmic);
+    border-color: hsl(var(--accent));
   }
 
   .mood-chip {
@@ -242,9 +266,9 @@ All colors MUST be HSL.
   }
 
   .nav-panel {
-    background: hsl(var(--navbar) / 0.95);
-    backdrop-filter: blur(16px);
-    border-right: 1px solid hsl(var(--border));
+    background: hsl(var(--navbar) / 0.8);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid hsl(var(--navbar-border) / 0.2);
     transition: var(--transition-theme);
   }
 

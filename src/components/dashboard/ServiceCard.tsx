@@ -25,20 +25,20 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       whileTap={{ scale: 0.98 }}
       className="h-full"
     >
-      <Card className={`service-card h-full cursor-pointer bg-gradient-card backdrop-blur-sm border border-border hover:border-primary/30 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}>
+      <Card className={`service-card h-full cursor-pointer backdrop-blur-sm border border-border hover:border-accent/30 rounded-xl shadow-lg hover:shadow-cosmic transition-all duration-300 hover:-translate-y-1`}>
         <CardContent className="p-8 h-full flex flex-col">
           <div className="flex items-center space-x-4 mb-6">
             <div className="text-6xl">{icon}</div>
-            <h3 className="text-3xl poppins-semibold heading-text">{title}</h3>
+            <h3 className="text-3xl font-semibold heading-text">{title}</h3>
           </div>
           
-          <p className="small-text mb-8 flex-grow text-lg inter-regular leading-relaxed">
+          <p className="text-secondary mb-8 flex-grow text-lg font-normal leading-relaxed">
             {description}
           </p>
           
           <Button
             onClick={onClick}
-            className="w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white inter-medium font-medium py-4 text-lg rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
+            className="w-full cosmic-gradient text-white font-medium py-4 text-lg rounded-xl transition-all duration-300 shadow-md hover:shadow-cosmic transform hover:scale-105"
           >
             Start {title}
           </Button>

@@ -8,10 +8,11 @@ import RevealTextSection from "@/components/dashboard/RevealTextSection";
 
 const Dashboard: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="fixed inset-0 bg-gradient-to-br from-[#07043d] via-[#550e6b] to-[#80505c]">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2f0664]/50 to-[#896072]/30"></div>
-      </div>
+    <div className="min-h-screen flex flex-col" style={{background: 'var(--gradient-background)'}}>
+      {/* Cosmic Background Overlay */}
+      <div className="fixed inset-0 opacity-30" style={{
+        background: 'radial-gradient(ellipse at center, #2d1b69 0%, rgba(26, 15, 61, 0.5) 50%, transparent 100%)'
+      }}></div>
       
       {/* Animated Reveal Text Section */}
       <div className="relative z-10">
