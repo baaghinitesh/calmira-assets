@@ -18,8 +18,8 @@ const Navbar: React.FC = () => {
       <header className="fixed top-0 left-0 right-0 z-50">
         <div
           className="
-            w-full bg-white/80 backdrop-blur-md
-            border-b border-gray-200 shadow-sm
+            w-full navbar-bg backdrop-blur-md
+            border-b border-border shadow-sm
           "
         >
           <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,16 +27,16 @@ const Navbar: React.FC = () => {
               {/* LEFT: Logo */}
               <Link
                 to="/"
-                className="flex items-center gap-2 font-bold text-xl text-gray-900"
+                className="flex items-center gap-2 font-bold text-xl text-white"
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="w-10 h-10 flex items-center justify-center rounded-lg
-                             bg-gradient-to-br from-indigo-500 to-purple-600 text-white"
+                             bg-gradient-to-br from-primary to-primary-dark text-white"
                 >
                   C
                 </motion.div>
-                <span className="hidden sm:inline">Calmira AI</span>
+                <span className="hidden sm:inline">Mental Wellness</span>
               </Link>
 
               {/* CENTER: Navigation links (desktop) */}
@@ -45,11 +45,11 @@ const Navbar: React.FC = () => {
                   <a
                     key={link.name}
                     href={link.path}
-                    className="relative text-gray-700 font-medium transition-colors hover:text-indigo-600"
+                    className="relative small-text font-medium transition-colors hover:text-white"
                   >
                     {link.name}
                     {/* Animated underline */}
-                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
                   </a>
                 ))}
               </nav>
@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}
                   className="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-md
-                             text-gray-700 hover:text-indigo-600 transition"
+                             small-text hover:text-white transition"
                 >
                   <BarChart3 size={18} />
                   Analytics
@@ -71,8 +71,8 @@ const Navbar: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-5 py-2 rounded-lg bg-indigo-600 text-white font-medium shadow-md
-                             hover:bg-indigo-500 transition"
+                  className="px-5 py-2 rounded-lg bg-primary text-white font-medium shadow-md
+                             hover:bg-primary-dark transition"
                 >
                   Sign Up
                 </motion.button>
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
                 {/* Hamburger (mobile only) */}
                 <button
                   onClick={() => setMobileOpen((s) => !s)}
-                  className="lg:hidden p-2 rounded-md text-gray-700 hover:text-indigo-600 transition"
+                  className="lg:hidden p-2 rounded-md text-white hover:text-primary transition"
                 >
                   {mobileOpen ? <X size={22} /> : <Menu size={22} />}
                 </button>
@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -200, opacity: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed inset-x-0 top-16 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg z-40"
+            className="fixed inset-x-0 top-16 navbar-bg backdrop-blur-md border-b border-border shadow-lg z-40"
           >
             <div className="px-6 py-6 space-y-4">
               <nav className="flex flex-col gap-4">
@@ -107,19 +107,19 @@ const Navbar: React.FC = () => {
                     key={link.name}
                     href={link.path}
                     onClick={() => setMobileOpen(false)}
-                    className="text-gray-800 font-medium px-4 py-2 rounded-md hover:bg-indigo-50 transition"
+                    className="text-white font-medium px-4 py-2 rounded-md hover:bg-primary/20 transition"
                   >
                     {link.name}
                   </a>
                 ))}
               </nav>
 
-              <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
+              <div className="flex flex-col gap-3 pt-4 border-t border-border">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
                   className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md
-                             text-gray-700 border border-gray-300 hover:bg-gray-100 transition"
+                             small-text border border-border hover:bg-primary/20 transition"
                 >
                   <BarChart3 size={18} />
                   Analytics
@@ -128,7 +128,7 @@ const Navbar: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full px-4 py-2 rounded-md bg-indigo-600 text-white font-medium shadow hover:bg-indigo-500 transition"
+                  className="w-full px-4 py-2 rounded-md bg-primary text-white font-medium shadow hover:bg-primary-dark transition"
                 >
                   Sign Up
                 </motion.button>

@@ -143,9 +143,9 @@ const LightServiceNavigation: React.FC = () => {
                     variant="ghost"
                     size="sm"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-2 hover:bg-primary/10 rounded-xl"
+                    className="p-2 hover:bg-white/20 rounded-xl"
                   >
-                    <X className="h-5 w-5 text-foreground" />
+                    <X className="h-5 w-5 text-white" />
                   </Button>
                 </div>
 
@@ -159,8 +159,8 @@ const LightServiceNavigation: React.FC = () => {
                       onClick={() => handleNavigation(item.path)}
                       className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 inter-medium ${
                         location.pathname === item.path
-                          ? "bg-primary/10 text-primary border border-primary/20 shadow-sm"
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                          ? "bg-primary text-white border border-primary shadow-sm"
+                          : "small-text hover:text-white hover:bg-primary/20"
                       }`}
                     >
                       <item.icon className="h-5 w-5" />

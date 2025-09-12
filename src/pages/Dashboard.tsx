@@ -8,15 +8,22 @@ import RevealTextSection from "@/components/dashboard/RevealTextSection";
 
 const Dashboard: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-50 via-white to-pink-50">
+    <div className="min-h-screen flex flex-col">
+      <div className="fixed inset-0 bg-gradient-to-br from-[#07043d] via-[#550e6b] to-[#80505c]">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2f0664]/50 to-[#896072]/30"></div>
+      </div>
       
       {/* Animated Reveal Text Section */}
-      <RevealTextSection />
+      <div className="relative z-10">
+        <RevealTextSection />
+      </div>
 
       {/* Navbar */}
-      <Navbar />
+      <div className="relative z-20">
+        <Navbar />
+      </div>
 
-      <main className="pt-28 pb-16 px-4 md:px-8 flex-1">
+      <main className="relative z-10 pt-28 pb-16 px-4 md:px-8 flex-1">
         <div className="max-w-7xl mx-auto flex flex-col gap-20">
           
           {/* Hero Section */}
@@ -30,7 +37,9 @@ const Dashboard: React.FC = () => {
         </div>
       </main>
 
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </div>
   );
 };

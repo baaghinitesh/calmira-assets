@@ -29,10 +29,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <CardContent className="p-8 h-full flex flex-col">
           <div className="flex items-center space-x-4 mb-6">
             <div className="text-6xl">{icon}</div>
-            <h3 className="text-3xl poppins-semibold text-foreground">{title}</h3>
+            <h3 className="text-3xl poppins-semibold heading-text">{title}</h3>
           </div>
           
-          <p className="text-muted-foreground mb-8 flex-grow text-lg inter-regular leading-relaxed">
+          <p className="small-text mb-8 flex-grow text-lg inter-regular leading-relaxed">
             {description}
           </p>
           

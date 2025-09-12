@@ -12,104 +12,78 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Light Theme with Soft Gradients and Pale Tones */
-    --background: 220 20% 98%; /* Very light blue-gray */
-    --foreground: 220 15% 25%; /* Dark gray for text */
+    /* Custom Dark Theme */
+    --background: 246 67% 15%; /* #07043d base */
+    --foreground: 274 91% 94%; /* #ede4fa for small text */
 
-    --card: 0 0% 100%; /* Pure white cards */
-    --card-foreground: 220 15% 25%;
+    --card: 289 35% 25%; /* Dark card with purple tint */
+    --card-foreground: 274 91% 94%; /* #ede4fa */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 25%;
+    --popover: 289 35% 25%;
+    --popover-foreground: 274 91% 94%;
 
-    --primary: 220 70% 60%; /* Soft blue primary */
+    --primary: 217 64% 60%; /* #507cdb button color */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 95%; /* Very light gray */
-    --secondary-foreground: 220 15% 25%;
+    --secondary: 334 28% 41%; /* #80505c navbar color */
+    --secondary-foreground: 274 91% 94%;
 
-    --muted: 220 15% 94%; /* Light muted background */
-    --muted-foreground: 220 10% 45%; /* Medium gray text */
+    --muted: 289 35% 20%; /* Darker muted */
+    --muted-foreground: 274 91% 94%; /* #ede4fa */
 
-    --accent: 200 80% 70%; /* Soft cyan accent */
-    --accent-foreground: 220 15% 25%;
+    --accent: 0 73% 59%; /* #ee4444 for headings */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 70% 60%;
+    --destructive: 0 73% 59%; /* #ee4444 */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 88%; /* Light border */
-    --input: 220 15% 96%; /* Very light input background */
-    --ring: 220 70% 60%;
+    --border: 289 35% 30%; /* Darker border */
+    --input: 289 35% 22%; /* Dark input */
+    --ring: 217 64% 60%;
 
-    --radius: 0.75rem; /* Rounded corners */
+    --radius: 0.75rem;
 
-    /* Custom Light Theme Colors */
-    --primary-light: 220 70% 85%; /* Light blue */
-    --primary-medium: 220 70% 60%; /* Medium blue */
-    --primary-dark: 220 70% 45%; /* Darker blue */
-    --background-soft: 220 30% 96%; /* Soft background */
+    /* Custom Dark Theme Colors */
+    --primary-light: 217 64% 70%; /* Lighter button */
+    --primary-medium: 217 64% 60%; /* #507cdb */
+    --primary-dark: 217 64% 50%; /* Darker button */
+    --background-soft: 289 35% 18%; /* Soft dark background */
     
-    /* Light Theme Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 70% 85%), hsl(200 80% 85%), hsl(240 60% 90%));
-    --gradient-text: linear-gradient(90deg, hsl(220 70% 60%), hsl(200 80% 70%), hsl(220 15% 25%));
-    --gradient-button: linear-gradient(135deg, hsl(220 70% 60%), hsl(200 80% 70%));
-    --gradient-background: linear-gradient(135deg, hsl(220 30% 98%), hsl(200 30% 96%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 30% 98%));
+    /* Dark Theme Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(246 67% 15%), hsl(289 71% 22%), hsl(334 28% 41%));
+    --gradient-text: linear-gradient(90deg, hsl(0 73% 59%), hsl(274 91% 94%), hsl(217 64% 60%));
+    --gradient-button: linear-gradient(135deg, hsl(217 64% 60%), hsl(217 64% 70%));
+    --gradient-button-hover: linear-gradient(to right, hsl(245 55% 11%), hsl(252 36% 28%), hsl(245 29% 20%));
+    --gradient-background: linear-gradient(135deg, hsl(246 67% 15%), hsl(289 71% 22%), hsl(334 28% 41%), hsl(262 75% 20%), hsl(334 24% 44%));
+    --gradient-card: linear-gradient(135deg, hsl(289 35% 25%), hsl(334 28% 30%));
 
-    /* Soft Shadows */
-    --shadow-sm: 0 1px 3px hsl(220 15% 25% / 0.1);
-    --shadow-md: 0 4px 6px hsl(220 15% 25% / 0.1);
-    --shadow-lg: 0 10px 15px hsl(220 15% 25% / 0.1);
-    --shadow-xl: 0 20px 25px hsl(220 15% 25% / 0.1);
+    /* Dark Theme Shadows */
+    --shadow-sm: 0 1px 3px hsl(246 67% 8% / 0.5);
+    --shadow-md: 0 4px 6px hsl(246 67% 8% / 0.5);
+    --shadow-lg: 0 10px 15px hsl(246 67% 8% / 0.5);
+    --shadow-xl: 0 20px 25px hsl(246 67% 8% / 0.5);
 
-    /* Animations */
+    /* Smooth Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-theme: all 0.4s ease;
 
     /* Chat Colors */
-    --chat-sent: 220 70% 85%; /* Light blue for sent messages */
-    --chat-received: 220 15% 92%; /* Light gray for received messages */
-    --chat-sent-foreground: 220 70% 20%;
-    --chat-received-foreground: 220 15% 25%;
+    --chat-sent: 217 64% 60%; /* #507cdb for sent messages */
+    --chat-received: 289 35% 25%; /* Dark for received messages */
+    --chat-sent-foreground: 0 0% 100%;
+    --chat-received-foreground: 274 91% 94%; /* #ede4fa */
+    
+    /* Navbar Color */
+    --navbar: 334 28% 41%; /* #80505c */
+    --navbar-foreground: 274 91% 94%;
+    
+    /* Heading Colors */
+    --heading: 0 73% 59%; /* #ee4444 */
+    --text-small: 274 91% 94%; /* #ede4fa */
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  /* Remove default dark theme as we're using custom dark theme as default */
 }
 
 @layer base {
@@ -118,7 +92,10 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply font-inter;
+    background: var(--gradient-background);
+    color: hsl(var(--foreground));
+    transition: var(--transition-theme);
   }
 
   /* Font weight utilities */
@@ -208,6 +185,20 @@ All colors MUST be HSL.
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+  
+  /* Heading styles */
+  .heading-text {
+    color: hsl(var(--heading)); /* #ee4444 */
+  }
+  
+  .small-text {
+    color: hsl(var(--text-small)); /* #ede4fa */
+  }
+  
+  .navbar-bg {
+    background-color: hsl(var(--navbar)); /* #80505c */
+    color: hsl(var(--navbar-foreground));
+  }
 
   .glow-effect {
     filter: drop-shadow(var(--shadow-glow));
@@ -215,24 +206,28 @@ All colors MUST be HSL.
 
   .hero-button {
     background: var(--gradient-button);
-    transition: var(--transition-glow);
-    box-shadow: var(--shadow-glow);
+    transition: var(--transition-theme);
+    box-shadow: var(--shadow-md);
   }
 
   .hero-button:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-glow), var(--shadow-primary);
+    background: var(--gradient-button-hover);
+    box-shadow: var(--shadow-lg);
   }
 
   /* New utility classes for consistent styling */
   .service-card {
-    @apply bg-card border border-border rounded-2xl p-6 transition-all duration-300;
-    box-shadow: var(--shadow-primary);
+    background: var(--gradient-card);
+    @apply border border-border rounded-2xl p-6;
+    transition: var(--transition-theme);
+    box-shadow: var(--shadow-md);
   }
 
   .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-glow), var(--shadow-accent);
+    box-shadow: var(--shadow-lg);
+    border-color: hsl(var(--primary));
   }
 
   .mood-chip {
@@ -247,7 +242,10 @@ All colors MUST be HSL.
   }
 
   .nav-panel {
-    @apply bg-background/95 backdrop-blur-lg border-r border-border;
+    background: hsl(var(--navbar) / 0.95);
+    backdrop-filter: blur(16px);
+    border-right: 1px solid hsl(var(--border));
+    transition: var(--transition-theme);
   }
 
   /* Scrollbar utilities */
